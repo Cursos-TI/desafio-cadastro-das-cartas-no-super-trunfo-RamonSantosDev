@@ -74,8 +74,8 @@ int main() {
     PIBper2 = (float) PIB2 / populacao2;
 
     //soma de todos os atributos
-    superPoder1 = (float) populacao + area + PIB + (float)pontosT + (1.0f / densidadePo1);
-    superPoder2 = (float) populacao2 + area2 + PIB2 + (float)pontosT2 + (1.0f / densidadePo2);
+    superPoder1 = (float) populacao + area + (PIB * 1000000000.0f) + (float)pontosT + (1.0f / densidadePo1);
+    superPoder2 = (float) populacao2 + area2 + (PIB2 * 1000000000.0f) + (float)pontosT2 + (1.0f / densidadePo2);
 
     // Usei o comado printf para exibir os valores armazenado nas variaveis.
     printf("------------- CARTA 1: -------------\n\n");
