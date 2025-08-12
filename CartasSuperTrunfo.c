@@ -7,10 +7,17 @@ int main() {
     char estado, estado2;
     char codigo[10], codigo2[10];
     char cidade[50], cidade2[50];
+
     unsigned long int populacao, populacao2; // unsigned log int serve para grandes populações.
+    
     int pontosT, pontosT2;
+
     float densidadePo1, PIBper1, densidadePo2, PIBper2;
     float area, area2, PIB, PIB2;
+
+    float superPoder1, superPoder2;
+
+    float densidadeInvertida1, densidadeInvertida2;
     
     printf("---- Jogo Super Trunfo Países -----\n\n");
     printf("------- Cadastro de Cartas --------\n");
@@ -68,6 +75,12 @@ int main() {
     PIBper1 = (float) PIB / populacao;
     PIBper2 = (float) PIB2 / populacao2;
 
+    densidadeInvertida1 = 1 / densidadePo1;
+    densidadeInvertida2 = 1 / densidadePo2;
+    
+    superPoder1 = (float) populacao + area + PIB + pontosT + densidadeInvertida1;
+    superPoder2 = (float) populacao2 + area2 + PIB2 + pontosT2 + densidadeInvertida2;
+
     // Usei o comado printf para exibir os valores armazenado nas variaveis.
     printf("------------- CARTA 1: -------------\n\n");
     printf("Estado: %c\n", estado);
@@ -79,7 +92,7 @@ int main() {
     printf("Número de Pontos Turisticos: %d\n", pontosT);
     printf("Densidade Populacional: %.2f hab/km²\n", densidadePo1);
     printf("PIB per Capita: R$ %.2f\n\n", PIBper1);
-
+    
     // usei o comado printf para exibir os valores armazenado nas variaveis.
     printf("------------- CARTA 2: -------------\n\n");
     printf("Estado: %c\n", estado2);
