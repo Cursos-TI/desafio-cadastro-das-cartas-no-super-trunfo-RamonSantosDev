@@ -16,8 +16,6 @@ int main() {
     float area, area2, PIB, PIB2;
 
     float superPoder1, superPoder2;
-
-    float densidadeInvertida1, densidadeInvertida2;
     
     printf("---- Jogo Super Trunfo Países -----\n\n");
     printf("------- Cadastro de Cartas --------\n");
@@ -31,7 +29,7 @@ int main() {
 
     printf("Digite o nome da Cidade: ");
     scanf("%s", cidade);
-
+ 
     printf("Digite o numero de habitantes ");
     scanf("%lu", &populacao);
 
@@ -75,11 +73,9 @@ int main() {
     PIBper1 = (float) PIB / populacao;
     PIBper2 = (float) PIB2 / populacao2;
 
-    densidadeInvertida1 = 1 / densidadePo1;
-    densidadeInvertida2 = 1 / densidadePo2;
-    
-    superPoder1 = (float) populacao + area + PIB + pontosT + densidadeInvertida1;
-    superPoder2 = (float) populacao2 + area2 + PIB2 + pontosT2 + densidadeInvertida2;
+    //soma de todos os atributos
+    superPoder1 = (float) populacao + area + PIB + (float)pontosT + (1.0f / densidadePo1);
+    superPoder2 = (float) populacao2 + area2 + PIB2 + (float)pontosT2 + (1.0f / densidadePo2);
 
     // Usei o comado printf para exibir os valores armazenado nas variaveis.
     printf("------------- CARTA 1: -------------\n\n");
@@ -104,6 +100,16 @@ int main() {
     printf("Número de Pontos Turisticos: %d\n", pontosT2);
     printf("Densidade Populacional: %.2f hab/km²\n", densidadePo2);
     printf("PIB per Capita: R$ %.2f\n", PIBper2);
+
+    // comparando as cartas
+    printf("------- Comparação de cartas ---------\n\n");
+    printf("população: Carta 1 venceu (%d)\n", populacao > populacao2);
+    printf("Area: Carta 1 venceu (%d)\n", area > area2);
+    printf("PIB: Carta 1 venceu (%d)\n", PIB > PIB2);
+    printf("Pontos turisticos: Carta 1 venceu (%d)\n", pontosT > pontosT2);
+    printf("Densidade populacional: Carta 2 venceu (%d)\n", densidadePo1 < densidadePo2);
+    printf("PIB per Capita: Carta 1 venceu (%d)\n ", PIBper1 > PIBper2);
+    printf("Super poder: Carta 1 venceu (%d)\n", superPoder1 > superPoder2);
 
     return 0;
 }
