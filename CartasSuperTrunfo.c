@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 
 
 int main() {
@@ -16,6 +17,8 @@ int main() {
     float area, area2, PIB, PIB2;
 
     float superPoder1, superPoder2;
+
+    int c;
     
     printf("---- Jogo Super Trunfo Países -----\n\n");
     printf("------- Cadastro de Cartas --------\n");
@@ -27,8 +30,12 @@ int main() {
     printf("Digite o código do Estado: ");
     scanf("%s", codigo);
 
+    while ((c = getchar()) != '\n' && c != EOF) { }
+
     printf("Digite o nome da Cidade: ");
-    scanf("%s", cidade);
+    fgets(cidade, sizeof(cidade), stdin);
+    cidade[strcspn(cidade, "\n")] = '\0';
+
  
     printf("Digite o numero de habitantes ");
     scanf("%lu", &populacao);
@@ -51,8 +58,12 @@ int main() {
     printf("Digite o codigo do Estado: ");
     scanf("%s", codigo2);
 
+    while ((c = getchar()) != '\n' && c != EOF) { }
+
     printf("Digite o nome da Cidade: ");
-    scanf("%s", cidade2);
+    fgets(cidade2, sizeof(cidade2), stdin);
+    cidade2[strcspn(cidade2, "\n")] = '\0';
+
 
     printf("Digite o numero de habitantes: ");
     scanf("%lu", &populacao2);
