@@ -77,6 +77,7 @@ int main() {
     superPoder1 = (float) populacao + area + PIB + PIBper1 + (float)pontosT + (1.0f / densidadePo1);
     superPoder2 = (float) populacao2 + area2 + PIB2 + PIBper2 + (float)pontosT2 + (1.0f / densidadePo2);
 
+
     // Usei o comado printf para exibir os valores armazenado nas variaveis.
     printf("------------- CARTA 1: -------------\n\n");
     printf("Estado: %c\n", estado);
@@ -109,7 +110,17 @@ int main() {
     printf("Pontos turisticos: Carta 1 venceu (%d)\n", pontosT > pontosT2);
     printf("Densidade populacional: Carta 2 venceu (%d)\n", densidadePo1 < densidadePo2);
     printf("PIB per Capita: Carta 1 venceu (%d)\n ", PIBper1 > PIBper2);
-    printf("Super poder: Carta 1 venceu (%d)\n", superPoder1 > superPoder2);
+    printf("Super poder: Carta 1 venceu (%d)\n\n", superPoder1 > superPoder2);
+
+    printf("-- Comparação de cartas(atributo Área): --\n\n");
+    
+    printf("Carta 1 - %s: %.2f\n", cidade, area );
+    printf("Carta 2 - %s: %.2f\n", cidade2, area2);
+    if(area > area2) {
+        printf("Resultado: Carta 1 %s Venceu!\n", cidade);
+    }else {
+        printf("Resultado: Carta 2 %s Venceu!\n", cidade2);
+    }
 
     return 0;
 }
